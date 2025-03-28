@@ -1,4 +1,5 @@
 from typing import Never
+import re
 
 class Input_Utils:
     @classmethod
@@ -15,7 +16,7 @@ class Input_Utils:
     @staticmethod
     def get_number_list() -> list[int] | Never:
         list_str:str = input()
-        if(not list_str or not all(map(lambda item : item.isnumeric(),list_str.split(',')))):
+        if(not list_str or not all(map(lambda item : bool(re.match(r"^[-+]?\d+$", item)),list_str.split(',')))):
             raise ValueError('Invalid input')
 
         # Create a list 'nums' with specific elements
