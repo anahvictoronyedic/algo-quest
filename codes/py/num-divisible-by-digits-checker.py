@@ -34,7 +34,7 @@ def allDigitsDivide( n) :
 	return True
 
 # Driver function
-n = 128
+n = int(input("Enter the number:"))
 
 if (allDigitsDivide(n)) :
 	print("Yes")
